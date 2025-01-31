@@ -1,576 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Irdina Batrisyia - Software Engineer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/css/simple-icons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
 
-		/* Styling the body of the page */
-		body {
-			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #010101;
-		}
+      body {
+        background: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
 
-		/* Stylingthe last h2 tag by giving margin bottom */
-		.progress-bar-container:not(:last-child) {
-			margin-bottom: 50px;
-		}
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: #ffffff;
+      }
 
-		/* Styling the h2 tag by giving color, 
-		letter spacing, font-size etc.*/
-		.progress-bar-container h2 {
-			font-family: Arial, Helvetica, sans-serif;
-			color: #eee;
-			letter-spacing: 1px;
-			font-size: 20px;
-		}
+      /* Header Section */
+      .header {
+        text-align: center;
+        padding: 2rem 0;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #eaeaea;
+      }
 
-		/* Styling the border and box
-		effect of the progress bar*/
-		.progress-bar {
-			width: 800px;
-			height: 5px;
-			margin-top: 10px;
-			border: 1px solid #565656;
-			border-radius: 5px;
-			box-shadow: 0 0 10px rgb(245, 159, 0);
-		}
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #000;
+      }
 
-		/* Stylingthe background color of each 
-		animation and border radius */
-		.percentage {
-			display: block;
-			height: 100%;
-			background-color: orange;
-			border-radius: 5px;
-			animation: progress 1500ms ease-in 1;
-		}
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+      }
 
-		/* Assigning width of each languages*/
-		.php {
-			width: 70%;
-		}
+      .contact-info a {
+        color: #666;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
-		.python {
-			width: 20%;
-		}
+      /* Section Styles */
+      section {
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+      }
 
-		.html {
-			width: 75%;
-		}
+      .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #000;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #000;
+      }
 
-		.css {
-			width: 65%;
-		}
+      /* Education & Experience */
+      .timeline-item {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        background: #fff;
+      }
 
-		.javascript {
-			width: 55%;
-		}
+      .timeline-date {
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 0.5rem;
+      }
 
-		/* Animating the progress bar by 
-		initially starting from 0*/
-		@keyframes progress {
-			from {
-				width: 0;
-			}
-		}
+      .timeline-item h3 {
+        color: #000;
+        margin-bottom: 0.5rem;
+      }
 
+      .timeline-item ul {
+        list-style-position: inside;
+        margin-top: 0.5rem;
+      }
 
-* {
-	box-sizing: border-box;
-  }
-  
-  body {
-	padding: 0;
-	margin: 0;
-	font-family: sans-serif;
-	background-color: #223;
-  }
-  
-  .outer_wrapper {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	overflow: hidden;
-  }
-  
-  .wrapper {
-	position: absolute;
-	height: calc(100vh - 100px);
-	width: 100%;
-	top: 0;
-  }
-  
-  .ground {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 150px;
-	background-color: black;
-  }
-  
-  .cat {
-	position: absolute;
-	bottom: 65px;
-	left: 100px;
-	height: 30px;
-	width: 60px;
-	transition: 1.5s;
-	transform-origin: center;
-	background-color: transparent;
-  }
-  
-  	/* body */
+      .timeline-item li {
+        margin-bottom: 0.3rem;
+        padding-left: 1rem;
+      }
 
-	.body {
-		position: absolute;
-		height: 30px;
-		width: 60px;
-	}
-	
-	.face_left .body { 
-		animation: turn_body_left forwards 0.5s;
-	}
-	
-	@keyframes turn_body_left {
-		0%,100% { transform: scale(1); }
-		50% { transform: scale(0.5, 1); }
-	}
-	
-	.face_right .body {
-		animation: turn_body_right forwards 0.5s;
-	}
-	
-	@keyframes turn_body_right {
-		0%,100% { transform: scale(1); }
-		50% { transform: scale(0.5, 1); }
-	}
-	
-	/* head */
-	.cat_head {
-		position: absolute;
-		height: 40px;
-		width: 48px;
-		right: -10px;
-		top: -30px;
-		transition: 0.5s;
-		z-index: 50;
-	}
-	
-	.first_pose .cat_head,
-	.face_left .cat_head{ 
-		right: 22px;
-	}
-	
-	
-	/* tail */
-	.tail {
-		position: absolute;
-		top: -25px;
-		height: 36px;
-		width: 15px;
-		animation: tail_motion forwards 2s;
-		transform-origin: bottom right;
-	}
-	
-	@keyframes tail_motion {
-		0%,100% { 
-		left: -5px;
-		transform: rotate(0deg) scale(1); 
-		}
-		50% { 
-		left: -10px;
-		transform: rotate(-50deg) scale(-1,1); 
-		}
-	}
-	
-	.first_pose .tail ,
-	.face_left .tail {
-		left: 45px;
-		animation: tail_motion_alt forwards 2s;
-	}
-	
-	@keyframes tail_motion_alt {
-		0%,100% { 
-		left: 45px;
-		transform: rotate(0deg) scale(1); 
-		}
-		50% { 
-		left: 40px;
-		transform: rotate(50deg) scale(-1,1); 
-		}
-	}
-	
-	
-	
-	/* legs */
-	.leg {
-		position: absolute;
-		height: 20px;
-		width: 10px;
-		transform-origin: top center;
-	}
-	
-	.front_legs,
-	.back_legs {
-		position: absolute;
-		height: 30px;
-		transition: 0.7s;
-	}
-	
-	.front_legs {
-		width: 30px;
-		right: 0;
-	}
-	
-	.back_legs {
-		width: 25px;
-		left: 0; 
-	}
-	
-	.face_left .leg svg {
-		transform: scale(-1,1);
-	}
-	
-	.face_right .front_legs{ right: 0; }
-	
-	.first_pose .front_legs,
-	.face_left .front_legs{ right: 30px; }
-	
-	.face_right .back_legs{ left: 0; }
-	
-	.first_pose .back_legs,
-	.face_left .back_legs{ left: 35px; }
-	
-	.one,
-	.three  {
-		bottom: -15px;
-		right: 0;
-	}
-	
-	.two, 
-	.four {
-		bottom: -15px;
-		left: 0px;
-	}
-	
-	.one.walk, 
-	.three.walk {
-		animation: infinite 0.3s walk;
-	}
-	
-	.two.walk, 
-	.four.walk {
-		animation: infinite 0.3s walk_alt;
-	}
-	
-	@keyframes walk {
-		0%,100% {transform: rotate(-10deg);}
-		50% {transform: rotate(10deg);}
-	}
-	
-	@keyframes walk_alt {
-		0%,100% {transform: rotate(10deg);}
-		50% {transform: rotate(-10deg);}
-	}
-	
-	
-	/* jump */
-	.cat_wrapper {
-		position: absolute;
-		bottom: 0;
-	}
-	
-	.cat_wrapper.jump .one { 
-		animation: infinite 0.3s walk;
-	}
-	
-	.cat_wrapper.jump .two { 
-		animation: infinite 0.3s walk_alt;
-	}
-	
-	.cat_wrapper.jump .three,
-	.cat_wrapper.jump .four {
-		animation: none;
-	}
-	
-	.cat_wrapper.jump .cat.face_right .back_legs {
-		transform-origin: center;
-		transform: rotate(50deg);
-	}
-	
-	.cat_wrapper.jump .cat.face_left .back_legs {
-		transform-origin: center;
-		transform: rotate(-50deg);
-	}
-	
-	.cat_wrapper.jump .cat.face_right .front_legs {
-		transform-origin: center;
-		transform: rotate(-60deg);
-	}
-	
-	.cat_wrapper.jump .cat.face_left .front_legs {
-		transform-origin: center;
-		transform: rotate(60deg);
-	}
-	
-	.cat_wrapper.jump{
-		animation: jump forwards 1s;
-	}
-	
-	@keyframes jump {
-		0%, 100%  {bottom: 0px;}
-		50% {bottom: 200px;}
-	}
-	
-	.jump .face_left{ 
-		animation: forwards 0.5s body_stand_left;
-		transform-origin: right bottom;
-	}
-	
-	.jump .face_right{ 
-		animation: forwards 0.5s body_stand_right;
-		transform-origin: left bottom;
-	}
-	
-	@keyframes body_stand_right {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(-45deg);}
-	}
-	
-	@keyframes body_stand_left {
-		0% {transform: rotate(0deg);}
-		100% {transform: rotate(45deg);}
-	}
-	
-	svg {
-		height: 100%;
-		width: 100%;
-	}
-	
-	polygon.eyes {
-		fill: white;
-	}
-	
-	polygon,
-	path {
-		fill: orange;
-	}
-	
-	.sign {
-		position: absolute;
-		color: white;
-		bottom: 10px;
-		right: 10px;
-		font-size: 10px;
-	}
-	
-	a {
-		color: white;
-		text-decoration: none;
-	}
-	
-	a:hover {
-		text-decoration: underline;
-	}
-	</style>
-</head>
+      /* Skills Section */
+      .skills-category {
+        margin-bottom: 2rem;
+      }
 
-<body>
-	<div class="skills">
-		<div class="progress-bar-container">
-			<h2>PHP</h2>
-			<div class="progress-bar">
-				<span class="percentage php"></span>
-			</div>
-		</div>
+      .category-title {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        color: #000;
+        font-weight: bold;
+      }
 
-		<div class="progress-bar-container">
-			<h2>HTML</h2>
-			<div class="progress-bar">
-				<span class="percentage html"></span>
-			</div>
-		</div>
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
 
-		<div class="progress-bar-container">
-			<h2>CSS</h2>
-			<div class="progress-bar">
-				<span class="percentage css"></span>
-			</div>
-		</div>
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.8rem;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        background: #fff;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
 
-		<div class="progress-bar-container">
-			<h2>JavaScript</h2>
-			<div class="progress-bar">
-				<span class="percentage javascript"></span>
-			</div>
-		</div>
+      .skill-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
 
-        <div class="progress-bar-container">
-			<h2>Python</h2>
-			<div class="progress-bar">
-				<span class="percentage python"></span>
-			</div>
-		</div>
-	</div>
+      .skill-icon {
+        font-size: 1.3rem;
+        width: 1.8rem;
+        text-align: center;
+        color: #000;
+      }
 
-	<div class="outer_wrapper">
-		<div class="wrapper">
-	
-		  <div class="cat_wrapper">
-			<div class="cat first_pose">
-			  <div class="cat_head">
-				<svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 76.4 61.2" >
-				  <polygon class="eyes" points="63.8,54.1 50.7,54.1 50.7,59.6 27.1,59.6 27.1,54.1 12.4,54.1 12.4,31.8 63.8,31.8 "/>
-				  <path d="M15.3,45.9h5.1V35.7h-5.1C15.3,35.7,15.3,45.9,15.3,45.9z M45.8,56.1V51H30.6v5.1H45.8z M61.1,35.7H56v10.2h5.1
-					V35.7z M10.2,61.2v-5.1H5.1V51H0V25.5h5.1V15.3h5.1V5.1h5.1V0h5.1v5.1h5.1v5.1h5.1v5.1c0,0,15.2,0,15.2,0v-5.1h5.1V5.1H56V0h5.1v5.1
-					h5.1v10.2h5.1v10.2h5.1l0,25.5h-5.1v5.1h-5.1v5.1H10.2z"/>
-				</svg>
-	
-			  </div>
-			  <div class="body">
-				<svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 91.7 40.8" >
-				  <path class="st0" d="M91.7,40.8H0V10.2h5.1V5.1h5.1V0h66.2v5.1h10.2v5.1h5.1L91.7,40.8z"/>
-				</svg>
-	
-				<div class="tail">
-				  <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 25.5 61.1" >
-					<polygon class="st0" points="10.2,56 10.2,50.9 5.1,50.9 5.1,40.7 0,40.7 0,20.4 5.1,20.4 5.1,10.2 10.2,10.2 10.2,5.1 15.3,5.1 
-					  15.3,0 25.5,0 25.5,10.2 20.4,10.2 20.4,15.3 15.3,15.3 15.3,20.4 10.2,20.4 10.2,40.7 15.3,40.7 15.3,45.8 20.4,45.8 20.4,50.9 
-					  25.5,50.9 25.5,61.1 15.3,61.1 15.3,56 "/>
-				  </svg>
-				</div>
-			  </div>
-			  
-			  <div class="front_legs">
-				<div class="leg one">
-				  <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
-					<polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
-				  </svg>
-				</div>
-				<div class="leg two">
-				  <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
-					<polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
-				  </svg>
-				</div>  
-			  </div>
-			  
-			  <div class="back_legs">
-				<div class="leg three">
-				  <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
-					<polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
-				  </svg>
-				</div>
-				<div class="leg four">
-				  <svg x="0px" y="0px" width="100%" height="100%" viewBox="0 0 14 30.5" >
-					<polygon points="15.3,30.5 5.1,30.5 5.1,25.4 0,25.4 0,0 15.3,0 "/>
-				  </svg>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-		
-		<div class="ground"></div>
-	
-	  </div>
-	
-</body>
+      .si {
+        width: 20px;
+        height: 20px;
+      }
+
+      .summary {
+        margin: 2rem 0 3rem 0;
+        padding: 1.5rem;
+        border: 1px solid #eaeaea;
+        border-radius: 4px;
+        background: #fff;
+        line-height: 1.8;
+      }
+
+      .summary p {
+        color: #333;
+        text-align: justify;
+      }
+
+      .timeline-item,
+      .skill-item,
+      .summary {
+        background: #f9f9f9;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+
+        .contact-info {
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <h1>Irdina Batrisyia Asrul Nizam</h1>
+        <p>Software Engineer</p>
+        <div class="contact-info">
+          <a href="mailto:irdinaasrul00@gmail.com">
+            <i class="fas fa-envelope"></i>
+            irdinaasrul00@gmail.com
+          </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i>
+            Kajang, Selangor
+          </a>
+        </div>
+      </header>
+
+      <!-- Professional Summary -->
+      <section class="summary">
+        <p>
+          Software Engineer with 2+ years of experience specializing in backend
+          development and data integration. Demonstrated expertise in building
+          scalable data pipelines and API development. Proficient in multiple
+          tech stacks including Laravel, Vue.js, Python, and Go, with recent
+          focus on modern technologies like Nest.js and Elasticsearch. Strong
+          track record of adapting to new technologies and delivering robust
+          backend solutions. Experienced in ETL development, microservices
+          architecture, and cloud services, with a proven ability to enhance
+          system performance and maintain high-quality code standards.
+        </p>
+      </section>
+
+      <!-- Education Section -->
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="timeline-item">
+          <div class="timeline-date">2021 - November 2023</div>
+          <h3>Bachelor of Computer Science (Information Systems)</h3>
+          <p>Universiti Malaya</p>
+          <ul>
+            <li>CGPA: 3.65</li>
+            <li>Awards: 3 Dean's Award</li>
+            <li>
+              Final Year Project: ETL Application, Visualization Dashboard, and
+              RESTful API (Selenium and Laravel)
+            </li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">2019 - 2020</div>
+          <h3>Foundation in Physical Science (Engineering)</h3>
+          <p>Universiti Malaya</p>
+          <ul>
+            <li>CGPA: 3.46</li>
+            <li>Achieved A in Programming I</li>
+            <li>Achieved B+ in Programming II</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Experience Timeline -->
+      <section class="timeline">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-date">August 2024 - Present</div>
+          <h3>Software Engineer - Silentmode Sdn. Bhd.</h3>
+          <ul>
+            <li>
+              Enhanced ETL systems for fuel sales data extraction and
+              transformation for BHPetrol and Shell using Laravel, Python, and
+              MySQL/Postgres
+            </li>
+            <li>
+              Enhanced microservices in RONPOS and implemented logging by using
+              TypeScript and Laravel
+            </li>
+            <li>
+              Modified database structure to support new features while ensuring
+              data integrity and compatibility
+            </li>
+            <li>
+              Developed a data governance service in Go as an API layer between
+              Elasticsearch and external consumers, with a modern report portal
+              built with Vue.js and NestJS
+            </li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">February 2023 - August 2024</div>
+          <h3>Junior Software Engineer - Terato Tech Sdn. Bhd.</h3>
+          <ul>
+            <li>
+              Designed, developed, and maintained web applications (Vue.js
+              frontend, Laravel backend) for B2B platforms (Dropee) and the
+              E-Submission system
+            </li>
+            <li>
+              Developed an ETL application for fuel retail sales data extraction
+              and transformation
+            </li>
+            <li>
+              Wrote unit tests and monitored application performance via AWS
+              CloudWatch and Sentry
+            </li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">August 2022 - September 2022</div>
+          <h3>IT Executive (Part Time) - Object Expression Sdn. Bhd.</h3>
+          <ul>
+            <li>
+              Upgraded a web application from PHP 5 to PHP 7, ensuring better
+              performance and security compliance
+            </li>
+            <li>Designed interactive LHDN monthly reports using Tableau</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">August 2020 - February 2021</div>
+          <h3>Software Engineer (Internship) - Object Expression Sdn. Bhd.</h3>
+          <ul>
+            <li>Maintained and enhanced existing Laravel-based applications</li>
+            <li>
+              Developed RESTful APIs for OSC3.0 (KPKT) using Laravel and JWT
+              authentication
+            </li>
+            <li>Implemented feature to generate PDF/Excel reports</li>
+            <li>Developed automated email notifications using Laravel Queue</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section class="skills">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-category">
+          <h3 class="category-title">Software Development</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-code skill-icon"></i>
+              <span>Coding & Debugging</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-sitemap skill-icon"></i>
+              <span>Software Design</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-tasks skill-icon"></i>
+              <span>SDLC</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-sync-alt skill-icon"></i>
+              <span>Agile & Scrum</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-clipboard-list skill-icon"></i>
+              <span>Requirement Analysis</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code-branch skill-icon"></i>
+              <span>Code Refactoring</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-vial skill-icon"></i>
+              <span>Testing</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-globe skill-icon"></i>
+              <span>Web Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Development</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-server skill-icon"></i>
+              <span>REST API</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-cubes skill-icon"></i>
+              <span>Microservices Architecture</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-layer-group skill-icon"></i>
+              <span>MVC Architecture</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database skill-icon"></i>
+              <span>ORM & Eloquent</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-shield-alt skill-icon"></i>
+              <span>Authentication & Authorization</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-mobile-alt skill-icon"></i>
+              <span>Responsive Design</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-sync skill-icon"></i>
+              <span>Async Programming</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-shield-alt skill-icon"></i>
+              <span>Defensive Programming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Tools & Software</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-jira skill-icon"></i>
+              <span>Jira & Confluence</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-desktop skill-icon"></i>
+              <span>AnyDesk</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-file-word skill-icon"></i>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-network-wired skill-icon"></i>
+              <span>Mesh Central</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-chart-bar skill-icon"></i>
+              <span>Tableau</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-eye skill-icon"></i>
+              <span>Sentry</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-aws skill-icon"></i>
+              <span>AWS CloudWatch</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-file-excel skill-icon"></i>
+              <span>Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Programming Languages & Frameworks</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-php skill-icon"></i>
+              <span>PHP/Laravel</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-python skill-icon"></i>
+              <span>Python/Selenium</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-golang skill-icon"></i>
+              <span>Go</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-js skill-icon"></i>
+              <span>JavaScript/TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-node-js skill-icon"></i>
+              <span>Node.js/NestJS</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-vuejs skill-icon"></i>
+              <span>Vue.js</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-html5 skill-icon"></i>
+              <span>HTML/CSS</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-bootstrap skill-icon"></i>
+              <span>Bootstrap/Tailwind</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Testing & Quality Assurance</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-vial skill-icon"></i>
+              <span>Unit Testing</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-check-circle skill-icon"></i>
+              <span>PHPUnit</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code skill-icon"></i>
+              <span>TDD</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-bug skill-icon"></i>
+              <span>Troubleshooting</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Databases & Data Management</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-database skill-icon"></i>
+              <span>MySQL</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-database skill-icon"></i>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-search skill-icon"></i>
+              <span>Elasticsearch</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-table skill-icon"></i>
+              <span>Query Optimization</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-exchange-alt skill-icon"></i>
+              <span>Database Migrations</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-shield-alt skill-icon"></i>
+              <span>Data Integrity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">DevOps & Cloud</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fab fa-docker skill-icon"></i>
+              <span>Docker & Docker Compose</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code-branch skill-icon"></i>
+              <span>Terraform</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-aws skill-icon"></i>
+              <span>AWS Services</span>
+            </div>
+            <div class="skill-item">
+              <i class="fab fa-git-alt skill-icon"></i>
+              <span>Git/GitLab/GitHub</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-code-branch skill-icon"></i>
+              <span>GitLab CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3 class="category-title">Data Processing & ETL</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <i class="fas fa-exchange-alt skill-icon"></i>
+              <span>ETL Pipelines</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-random skill-icon"></i>
+              <span>Data Transformation</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-file-pdf skill-icon"></i>
+              <span>PDF Generation</span>
+            </div>
+            <div class="skill-item">
+              <i class="fas fa-file-excel skill-icon"></i>
+              <span>Excel/CSV Generation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
-
-<script>
-	function init() { 
-		const catWrapper = document.querySelector('.cat_wrapper')
-		const wrapper = document.querySelector('.wrapper')
-		const cat = document.querySelector('.cat')
-		const head = document.querySelector('.cat_head')
-		const legs = document.querySelectorAll('.leg')
-		const pos = {
-		  x: null,
-		  y: null
-		}
-	  
-		const walk = () =>{
-		  cat.classList.remove('first_pose')
-		  legs.forEach(leg=>leg.classList.add('walk'))
-		}
-	  
-		const handleMouseMotion = e =>{
-		  pos.x = e.clientX
-		  pos.y = e.clientY
-		  walk()
-		}
-	  
-		const handleTouchMotion = e =>{
-		  if (!e.targetTouches) return
-		  pos.x = e.targetTouches[0].offsetX
-		  pos.y = e.targetTouches[0].offsetY
-		  walk()
-		}
-	  
-		const turnRight = () =>{
-		  cat.style.left = `${pos.x - 90}px`
-		  cat.classList.remove('face_left')
-		  cat.classList.add('face_right')
-		}
-	  
-		const turnLeft = () =>{
-		  cat.style.left = `${pos.x + 10}px`
-		  cat.classList.remove('face_right')
-		  cat.classList.add('face_left')
-		}
-	  
-		const decideTurnDirection = () =>{
-		  cat.getBoundingClientRect().x < pos.x ?
-			turnRight()
-			:
-			turnLeft()
-		}
-	  
-		const headMotion = () =>{
-		  pos.y > (wrapper.clientHeight - 100) ?
-			head.style.top = '-15px'
-			:
-			head.style.top = '-30px'
-		}
-	  
-		const jump = () =>{
-		  catWrapper.classList.remove('jump')
-		  if (pos.y < (wrapper.clientHeight - 250)) {
-			setTimeout(()=>{
-			  catWrapper.classList.add('jump')
-			},100)
-		  } 
-		}
-	  
-		const decideStop = ()=>{
-		  if (cat.classList.contains('face_right') && pos.x - 90 === cat.offsetLeft ||
-			  cat.classList.contains('face_left') && pos.x + 10 === cat.offsetLeft) {
-			legs.forEach(leg=>leg.classList.remove('walk'))    
-		  }
-		}
-		
-		setInterval(()=>{
-		  if (!pos.x || !pos.y) return
-		  decideTurnDirection()
-		  headMotion()
-		  decideStop()
-		},100)
-	  
-		// setInterval(()=>{
-		//   if (!pos.x || !pos.y) return
-		//   jump()
-		// },1000)
-	  
-		document.addEventListener('mousemove', handleMouseMotion)
-		document.addEventListener('mousemove', handleTouchMotion)
-	  }
-	  
-	  window.addEventListener('DOMContentLoaded', init)
-</script>
